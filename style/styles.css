@@ -266,3 +266,233 @@ footer {
   border-radius: 20%;
   cursor: pointer;
 }
+/*! ======================== CART ================= */
+
+.cart-container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(194, 194, 194);
+  width: 85%;
+  height: 65rem;
+  margin-top: 1.5rem;
+  margin-left: 10%;
+  border-radius: 20px;
+}
+.cart-title {
+  text-align: center;
+  margin-top: 3rem;
+  margin-left: 57rem;
+  font-size: 3rem;
+}
+.head-cart {
+  width: 130rem;
+  display: flex;
+  justify-content: space-around;
+}
+.cart-close {
+  margin-left: 52rem;
+  background-color: purple;
+  color: white;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 3rem;
+}
+.cart-close:hover {
+  background-color: red;
+}
+.cart-empty {
+  background-color: white;
+  border-radius: 20px;
+  height: 43rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10rem;
+}
+.cart-empty-img {
+  height: 28rem;
+  width: 30rem;
+}
+.items-container {
+  width: 120rem;
+  height: 15rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.items-qty {
+  font-weight: lighter;
+  font-size: 2rem;
+  margin-bottom: 7rem;
+}
+.items {
+  background-color: tomato;
+}
+.cart-total {
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(21, 173, 69);
+}
+cart-checkout {
+  padding: 0.5rem;
+}
+.checkout-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(117, 50, 249);
+  border-radius: 20px;
+  color: white;
+  font-weight: bolder;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  margin-top: 3rem;
+}
+.checkout-btn:hover {
+  background-color: rgb(28, 184, 28);
+}
+.icon-tabler-circle-check {
+  height: 3rem;
+  width: 5rem;
+}
+.cart-container-content {
+  box-sizing: border-box;
+  background-color: rgb(194, 194, 194);
+  width: 85%;
+  height: 60rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: -58rem;*/
+  margin-left: 10%;
+  border-radius: 20px;
+}
+
+.articulo1 {
+  box-sizing: border-box;
+  width: 100rem;
+  height: 13rem;
+  background-color: rgba(255, 255, 255, 0.837);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  border: 0px solid rgba(207, 204, 204, 0.182);
+}
+.cart-info {
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.714);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 12.8rem;
+  width: 60rem;
+  text-align: center;
+}
+
+.articulo2 {
+  width: 100rem;
+  height: 13rem;
+  background-color: rgba(255, 255, 255, 0.837);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  border: 0px solid rgba(207, 204, 204, 0.182);
+}
+.articulo3 {
+  width: 100rem;
+  height: 13rem;
+  background-color: rgba(255, 255, 255, 0.837);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  border: 0px solid rgba(207, 204, 204, 0.182);
+}
+.articulo4 {
+  width: 100rem;
+  height: 13rem;
+  background-color: rgba(255, 255, 255, 0.837);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  border: 0px solid rgba(207, 204, 204, 0.182);
+}
+.react-infinity {
+  height: 10rem;
+  width: 10rem;
+}
+.lebron19 {
+  height: 7rem;
+  width: 7rem;
+}
+.nike-pegasus {
+  height: 7rem;
+  width: 7rem;
+}
+.nike-pegasus {
+  height: 7rem;
+  width: 7rem;
+}
+.jordan-series-mid {
+  height: 7rem;
+  width: 7rem;
+}
+
+.trash {
+  height: 7rem;
+  width: 7rem;
+}
+.cart-subtitle {
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+
+.cart-price {
+  font-size: 1.7rem;
+  margin-top: -1.5rem;
+}
+.plus-and-minus {
+  margin-top: -1rem;
+  width: 20rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  border-radius: 10px;
+}
+.cart-amount-minus {
+  background-color: rgb(255, 255, 255);
+  font-size: 2rem;
+  border-radius: 15%;
+  width: 2.5rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.101);
+}
+.cart-amount-minus:hover {
+  background-color: red;
+  color: white;
+}
+.cart-amount-plus {
+  background-color: white;
+  font-size: 2rem;
+  border-radius: 15%;
+  width: 2.5rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.101);
+}
+
+.cart-amount-plus:hover {
+  background-color: red;
+  color: white;
+}
