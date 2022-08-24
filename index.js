@@ -1,3 +1,4 @@
+
 //MODE DARK - LIGHT
 const btn = document.querySelector(".icon-tabler-moon");
 const text = document.getElementById("mode");
@@ -554,5 +555,6 @@ showNikeRun.addEventListener("click", () => {
 // Checkout
 const checkout = document.querySelector('.checkout');
 checkout.addEventListener('click', () => {
+  alert('Thanks for your purchase')
   location.reload();
 })
