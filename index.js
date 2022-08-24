@@ -100,20 +100,16 @@ if(reactInfinity == 0 && nikePegasus == 0 && jordanSeries == 0 && leBron19 == 0 
   cartEmpty.style.display = 'flex'
 }
 
-// ARTICLE 1
-
-let units = ' units'
 let counterReactInfinity = 0;
 let counterLeBron19 = 0;
 let counterNikePegasus = 0;
 let counterJordanSeries = 0;
 
 //Total
-
 const total = document.querySelector('.cart-total');
 total.textContent = `$${counterReactInfinity*140 + counterLeBron19*160 + counterNikePegasus * 105 + counterJordanSeries *70}.00 `
 
-
+// ARTICLE 1
 addCart1.addEventListener('click', () => {
  
   if(reactInfinity <5){
@@ -521,10 +517,6 @@ plusBtn[3].addEventListener('click', () => {
   }
 })
 
-
-
-
-
 //Checkout
 const cartCheckout = document.querySelector(".cart-checkout");
 
@@ -559,257 +551,8 @@ showNikeRun.addEventListener("click", () => {
   box[3].style.display = "none";
   box[2].style.display = "none";
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-// Plus Nike Air Max
-plusBtn[0].addEventListener("click", () => {
-  cartFull.style.display = 'flex'
-  counterNikeAirMax++;
-  plusBtn[0].previousElementSibling.textContent = `${counterNikeAirMax} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[0].textContent = `Subtotal: $${counterNikeAirMax * 150}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeAirMax >= 5) {
-    alert("Sorry there is not more stock");
-    
-    counterNikeAirMax = 5;
-    plusBtn[0].previousElementSibling.textContent = `5 units`;
-    itemsQty.textContent = 5 + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent = 5 + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[0].textContent = `Subtotal: $750.00`;
-    cartTotal.textContent = `$${750 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-  }
-});
-
-// Minus Nike Air Max
-minusBtn[0].addEventListener("click", () => {
-  
-  counterNikeAirMax--;
-  plusBtn[0].previousElementSibling.textContent = `${counterNikeAirMax} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 +counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[0].textContent = `Subtotal: $${counterNikeAirMax * 150}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeAirMax < 0) {
-   
-    counterNikeAirMax = 0;
-    plusBtn[0].previousElementSibling.textContent = `0 units`;
-    itemsQty.textContent = counterNikeStreet +counterNikeSwift2 +counterNikeRun3 +counterNikeTacoJay;
-    navItemsQty.textContent =  counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[0].textContent = `Subtotal: $0.00`;
-    cartTotal.textContent = `$${counterNikeStreet * 230 +counterNikeSwift2 * 150 +counterNikeRun3 * 110 +counterNikeTacoJay * 180}.00`;
-  }
-
-});
-
-// Plus Nike Street
-plusBtn[1].addEventListener("click", () => {
-  
-  counterNikeStreet++;
-  plusBtn[1].previousElementSibling.textContent = `${counterNikeStreet} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[1].textContent = `Subtotal: $${counterNikeStreet * 230}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeStreet >= 5) {
-    alert("Sorry there is not more stock");
-    
-    counterNikeStreet = 5;
-    plusBtn[1].previousElementSibling.textContent = `5 units`;
-    itemsQty.textContent = 5 + counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent = 5 + counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[1].textContent = `Subtotal: $1150.00`;
-    cartTotal.textContent = `$${1150 + counterNikeAirMax * 150 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-  }
-});
-
-// Minus Nike Street
-minusBtn[1].addEventListener("click", () => {
-  
-  counterNikeStreet--;
-  plusBtn[1].previousElementSibling.textContent = `${counterNikeStreet} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 +counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[1].textContent = `Subtotal: $${counterNikeStreet * 230}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeStreet < 0) {
-   
-    counterNikeStreet = 0;
-    plusBtn[1].previousElementSibling.textContent = `0 units`;
-    itemsQty.textContent = counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent =  counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[1].textContent = `Subtotal: $0.00`;
-    cartTotal.textContent = `$${counterNikeAirMax *150 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-  }
-
-});
-
-// Plus Nike Swift2
-plusBtn[2].addEventListener("click", () => {
-  
-  counterNikeSwift2++;
-  plusBtn[2].previousElementSibling.textContent = `${counterNikeSwift2} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[2].textContent = `Subtotal: $${counterNikeSwift2 * 150}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeSwift2 >= 5) {
-    alert("Sorry there is not more stock");
-    
-    counterNikeStreet = 5;
-    plusBtn[2].previousElementSibling.textContent = `5 units`;
-    itemsQty.textContent = 5 + counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent = 5 + counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[2].textContent = `Subtotal: $750.00`;
-    cartTotal.textContent = `$${750 + counterNikeStreet * 230 + counterNikeAirMax * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-  }
-});
-
-// Minus Nike SNwift2
-minusBtn[2].addEventListener("click", () => {
-  
-  counterNikeSwift2--;
-  plusBtn[2].previousElementSibling.textContent = `${counterNikeSwift2} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[2].textContent = `Subtotal: $${counterNikeSwift2 * 150}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeSwift2 < 0) {
-   
-    counterNikeSwift2 = 0;
-    plusBtn[2].previousElementSibling.textContent = `0 units`;
-    itemsQty.textContent = counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent =  counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[2].textContent = `Subtotal: $0.00`;
-    cartTotal.textContent = `$${counterNikeStreet * 230 + counterNikeAirMax *150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-  }
-  
-});
-
-//Plus Nike Run 3
-plusBtn[3].addEventListener("click", () => {
-  
-  counterNikeRun3++;
-  plusBtn[3].previousElementSibling.textContent = `${counterNikeRun3} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[3].textContent = `Subtotal: $${counterNikeRun3 * 110}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeRun3 >= 5) {
-    alert("Sorry there is not more stock");
-    
-    counterNikeRun3 = 5;
-    plusBtn[3].previousElementSibling.textContent = `5 units`;
-    itemsQty.textContent = 5 + counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent = 5 + counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[3].textContent = `Subtotal: $550.00`;
-    cartTotal.textContent = `$${550 + counterNikeStreet * 230 + counterNikeAirMax * 150  + counterNikeTacoJay * 180}.00`;
-  }
-});
-
-// Minus Nike Run 3
-minusBtn[3].addEventListener("click", () => {
-  
-  counterNikeRun3--;
-  plusBtn[3].previousElementSibling.textContent = `${counterNikeRun3} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[3].textContent = `Subtotal: $${counterNikeRun3 * 110}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeRun3 < 0) {
-   
-    counterNikeRun3 = 0;
-    plusBtn[3].previousElementSibling.textContent = `0 units`;
-    itemsQty.textContent = counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent =  counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[3].textContent = `Subtotal: $0.00`;
-    cartTotal.textContent = `$${counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeAirMax * 150  + counterNikeTacoJay * 180}.00`;
-  }
- 
-//Plus Nike Taco Jay
-plusBtn[4].addEventListener("click", () => {
-  
-  counterNikeTacoJay++;
-  plusBtn[4].previousElementSibling.textContent = `${counterNikeTacoJay} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[4].textContent = `Subtotal: $${counterNikeTacoJay * 180}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeTacoJay >= 5) {
-    alert("Sorry there is not more stock");
-    
-    counterNikeTacoJay = 5;
-    plusBtn[4].previousElementSibling.textContent = `5 units`;
-    itemsQty.textContent = 5 + counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent = 5 + counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[4].textContent = `Subtotal: $900.00`;
-    cartTotal.textContent = `$${900 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeStreet * 230 + counterNikeAirMax * 150}.00`;
-  }
-});
-
-// Minus Nike Run 3
-minusBtn[4].addEventListener("click", () => {
-  
-  counterNikeTacoJay--;
-  plusBtn[4].previousElementSibling.textContent = `${counterNikeTacoJay} units`;
-  itemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  navItemsQty.textContent = counterNikeAirMax + counterNikeStreet + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-  cartSubtotal[4].textContent = `Subtotal: $${counterNikeTacoJay * 110}.00`;
-  cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;
-
-  if (counterNikeTacoJay < 0) {
-   
-    counterNikeTacoJay = 0;
-    plusBtn[4].previousElementSibling.textContent = `0 units`;
-    itemsQty.textContent = counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    navItemsQty.textContent =  counterNikeAirMax + counterNikeSwift2 + counterNikeRun3 + counterNikeTacoJay;
-    cartSubtotal[4].textContent = `Subtotal: $0.00`;
-    cartTotal.textContent = `$${counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeAirMax * 150 + counterNikeRun3 * 110}.00`;
-  }
-
-  
-})})
-
-
-*/
-
-
+// Checkout
+const checkout = document.querySelector('.checkout');
+checkout.addEventListener('click', () => {
+  location.reload();
+})
