@@ -6,6 +6,7 @@ const nikeLogoBlack = document.querySelector('.nike-logo-black')
 const nikeLogo = document.querySelector('.nike-logo')
 
 
+
 if (localStorage.getItem("theme") === "") {
   localStorage.setItem("theme", "light");
 }
@@ -18,6 +19,7 @@ if (themeUsed === "dark") {
   buy.style.color = "#ffffff";
   nikeLogo.style.display = 'flex'
   nikeLogoBlack.style.display = 'none'
+ 
 
 } else {
   document.body.style.background = "#ffffff";
@@ -37,6 +39,7 @@ btn.addEventListener("click", () => {
     buy.style.color = "#ffffff";
     nikeLogo.style.display = 'flex'
     nikeLogoBlack.style.display = 'none'
+   
   } else {
     localStorage.setItem("theme", "dark");
     document.body.style.background = "#ffffff";
@@ -47,21 +50,23 @@ btn.addEventListener("click", () => {
   }
 });
 
-// stock on local storage
-const nikeAirMax = 5
-localStorage.setItem('nikeAirMax', nikeAirMax)
+// Stock on local storage
+let reactInfinity = 1
+let leBron19= 1
+let nikePegasus = 1
+let jordanSeries = 1
+//localStorage.setItem('reactInfinity', reactInfinity)
+/* 
 
-const nikeRun3 = 5
-localStorage.setItem('nikeRun3', nikeRun3)
+localStorage.setItem('leBron19', leBron19)
 
-const nikeStreet = 5
-localStorage.setItem('nikeStreet', nikeStreet)
 
-const nikeSwift2 = 5
-localStorage.setItem('nikeSwift2', nikeSwift2)
+localStorage.setItem('nikePegasus', nikePegasus)
 
-const nikeTacoJay = 5
-localStorage.setItem('nikeTacoJay', nikeTacoJay)
+
+localStorage.setItem('jordanSeries', jordanSeries)
+*/
+
 // Add to cart
 const cartContainer = document.querySelector('.cart-container-content');
 const cartEmpty = document.querySelector('.cart-empty');
@@ -69,7 +74,12 @@ const addCart1 = document.querySelector('.plus1');
 const addCart2 = document.querySelector('.plus2');
 const addCart3 = document.querySelector('.plus3');
 const addCart4 = document.querySelector('.plus4');
-const addCart5 = document.querySelector('.plus5');
+const navItemsQty = document.querySelector(".counter-item");
+const itemsQty = document.querySelector(".items-qty");
+const cartTotal = document.querySelector(".cart-total");
+
+
+
 const cartFull = document.querySelectorAll('.cart-full');
 const cardArticulo1 = document.querySelector('.articulo1');
 const cartAmountNumber = document.querySelectorAll('.cart-amount-number');
@@ -77,24 +87,123 @@ const cartAmountNumber = document.querySelectorAll('.cart-amount-number');
 
 let units = ' units'
 let subtotalCounter = 0
+// ARTICLE 1
 addCart1.addEventListener('click', () => {
+ 
+  if(reactInfinity < 5){
+    cartTotal.textContent = `$${ reactInfinity * 140}.00`;
+    navItemsQty.textContent++
+    reactInfinity+=1
+    itemsQty.textContent++
     
+  
+  }else if(reactInfinity == 5){
+    itemsQty.textContent++
+    navItemsQty.textContent++
+    addCart1.style.display = 'none';
+    reactInfinity-=1
+    alert('There is not more stock')
+  
+  } else if (reactInfinity < 5){
+    reactInfinity+=1
+    itemsQty.textContent++
+    addCart1.style.display = 'flex';
+    navItemsQty.textContent++
+  }
+})
+// ARTICLE 2
+addCart2.addEventListener('click', () => {
+  if(leBron19 < 5){
+    cartTotal.textContent = `$${ leBron19 * 160}.00`;
+    navItemsQty.textContent++
+    leBron19+=1
+    itemsQty.textContent++
+  
+  }else if(leBron19 == 5){
+    itemsQty.textContent++
+    navItemsQty.textContent++
+    addCart2.style.display = 'none';
+    leBron19-=1
+    alert('There is not more stock')
+  
+  } else if (leBron19 < 5){
+    itemsQty.textContent++
+    leBron19+=1
+    addCart2.style.display = 'flex';
+    navItemsQty.textContent++
+  }
+})
+// ARTICLE 3
+addCart3.addEventListener('click', () => {
+  if(nikePegasus < 5){
+    itemsQty.textContent++
+    navItemsQty.textContent++
+    nikePegasus+=1
+  
+  }else if(nikePegasus == 5){
+    itemsQty.textContent++
+    navItemsQty.textContent++
+    addCart3.style.display = 'none';
+    nikePegasus-=1
+    alert('There is not more stock')
+  
+  } else if (nikePegasus < 5){
+    itemsQty.textContent++
+    nikePegasus+=1
+    addCart3.style.display = 'flex';
+    navItemsQty.textContent++
+  }
+})
+// ARTICLE 4
+addCart4.addEventListener('click', () => {
+  if(jordanSeries < 5){
+    itemsQty.textContent++
+    navItemsQty.textContent++
+    jordanSeries+=1
+  
+  }else if(jordanSeries == 5){
+    itemsQty.textContent++
+    navItemsQty.textContent++
+    addCart4.style.display = 'none';
+    jordanSeries-=1
+    alert('There is not more stock')
+  
+  } else if (jordanSeries < 5){
+    
+    jordanSeries+=1
+    addCart4.style.display = 'flex';
+    navItemsQty.textContent++
+  }
+})
+//Cart
+const cart = document.querySelector(".counter-item-cart");
+const cartArea = document.querySelector(".cart-container");
+const closeCart = document.querySelector(".cart-close");
+
+cart.addEventListener("click", () => {
+  cartArea.style.display = "flex";
+});
+
+closeCart.addEventListener("click", () => {
+  cartArea.style.display = "none";
+});
+ /*
   cartArea.style.display = 'flex';
   
 
-  if(counterNikeAirMax < 5){
+  if(reactInfinity < 5){
     cartFull.style.display ="flex"
     articulo1.style.display = 'flex'   
     itemsQty.textContent ++;
     navItemsQty.textContent ++
     subtotalCounter++
-    cartSubtotal[0].textContent = `Subtotal: $${subtotalCounter * 150}.00`;
+    cartSubtotal[0].textContent = `Subtotal: $${subtotalCounter * 140}.00`;
     cartAmountNumber[0]. textContent = navItemsQty.textContent + units 
-    if(counterNikeAirMax == 5 ){
+    if(reactInfinity == 5 ){
       alert('There is not more stock')
-      cartSubtotal[0].textContent = `Subtotal: $${counterNikeAirMax * 150}.00`;
-      cartTotal.textContent = `$${ counterNikeAirMax * 150 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;  
-    } else if(counterNikeAirMax == 5  && itemsQty.textContent == 5){
+      cartSubtotal[0].textContent = `Subtotal: $${reactInfinity * 150}.00`;
+      cartTotal.textContent = `$${ reactInfinity * 140 + counterNikeStreet * 230 + counterNikeSwift2 * 150 + counterNikeRun3 * 110 + counterNikeTacoJay * 180}.00`;  
+    } else if(reactInfinity == 5  && itemsQty.textContent == 5){
       
       addCart1.style.display = 'none'
       
@@ -105,8 +214,9 @@ addCart1.addEventListener('click', () => {
     cartFull.style.display = 'flex'
     
   }
-   
-})
+   */
+
+/*
 addCart2.addEventListener('click', () => {
     cartArea.style.display = 'flex';
    
@@ -203,7 +313,7 @@ addCart5.addEventListener('click', () => {
     cartEmpty.style.display = 'none';
     cartFull.style.display = 'flex'
 })
-
+*/
 // trash 
 const trash = document.querySelectorAll('.trash')
 const articulo1 = document.querySelector('.articulo1')
@@ -262,27 +372,17 @@ showNikeRun.addEventListener("click", () => {
   card[4].style.display = "none";
 });
 
-//Cart
-const cart = document.querySelector(".counter-item-cart");
-const cartArea = document.querySelector(".cart-container");
-const closeCart = document.querySelector(".cart-close");
 
-cart.addEventListener("click", () => {
-  cartArea.style.display = "flex";
-});
 
-closeCart.addEventListener("click", () => {
-  cartArea.style.display = "none";
-});
 
 // Counter items
 const minusBtn = document.querySelectorAll(".minus");
 const plusBtn = document.querySelectorAll(".plus");
-const itemsQty = document.querySelector(".items-qty");
+
 const cartSubtotal = document.querySelectorAll(".cart-subtotal");
-const cartTotal = document.querySelector(".cart-total");
+
 const cartCheckout = document.querySelector(".cart-checkout");
-const navItemsQty = document.querySelector(".counter-item");
+
 
 //counter article
 let counterNikeAirMax = 0;
