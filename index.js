@@ -90,6 +90,7 @@ const cardArticulo1 = document.querySelector('.articulo1');
 const articulo2 = document.querySelector('.articulo2')
 const articulo3 = document.querySelector('.articulo3')
 const articulo4 = document.querySelector('.articulo4')
+const stock = document.querySelectorAll('.stock')
 
 if(reactInfinity == 0 && nikePegasus == 0 && jordanSeries == 0 && leBron19 == 0 ){
   articulo1.style.display = 'none'
@@ -108,14 +109,16 @@ let subtotalCounter = 0
 addCart1.addEventListener('click', () => {
  
   if(reactInfinity <5){
+
     navItemsQty.textContent++
     unity[0].textContent++
     itemsQty.textContent++
     cartContainer.style.display = 'flex'
     articulo1.style.display = 'flex'
-    cartTotal.textContent = `Total: $${reactInfinity *140}.00`;
     reactInfinity+=1
+    stock[0].textContent--
     
+
   }else if(reactInfinity == 5){
     addCart1.style.visibility = 'hidden';
     alert('There is not more stock')
@@ -125,7 +128,8 @@ addCart1.addEventListener('click', () => {
     unity[0].textContent = 5
     itemsQty.textContent++
     reactInfinity-=1
-    cartTotal.textContent = `Total: $${700}.00`;
+    stock[0].textContent = 0
+    
   
   } else if (reactInfinity < 5){
     cartContainer.style.display = 'flex'
@@ -134,6 +138,8 @@ addCart1.addEventListener('click', () => {
     itemsQty.textContent++
     addCart1.style.visibility = 'visible';
     navItemsQty.textContent++
+    stock[0].textContent--
+    
     
   }
 
@@ -150,6 +156,7 @@ addCart2.addEventListener('click', () => {
     articulo2.style.display = 'flex'
     cartTotal.textContent = `Total: $${leBron19 *160}.00`;
     leBron19+=1
+    stock[1].textContent--
 
   }else if(leBron19 == 5){
     addCart2.style.visibility = 'hidden';
@@ -160,8 +167,8 @@ addCart2.addEventListener('click', () => {
     cartContainer.style.display = 'flex'
     articulo2.style.display = 'flex'
     leBron19-=1
-    cartTotal.textContent = `Total: $${800}.00`;
-  
+    stock[1].textContent = 0
+
   } else if (leBron19 < 5){
     leBron19+=1
     itemsQty.textContent++
@@ -169,7 +176,7 @@ addCart2.addEventListener('click', () => {
     articulo2.style.display = 'flex'
     addCart2.style.visibility = 'visible';
     navItemsQty.textContent++
-    
+    stock[1].textContent--
   }
 })
 // ARTICLE 3
@@ -182,8 +189,8 @@ addCart3.addEventListener('click', () => {
     itemsQty.textContent++
     cartContainer.style.display = 'flex'
     articulo3.style.display = 'flex'
-    cartTotal.textContent = `Total: $${nikePegasus *105}.00`;
     nikePegasus+=1
+    stock[2].textContent--
 
   }else if(nikePegasus == 5){
     addCart3.style.visibility = 'hidden';
@@ -194,8 +201,8 @@ addCart3.addEventListener('click', () => {
     cartContainer.style.display = 'flex'
     articulo3.style.display = 'flex'
     nikePegasus-=1
-    cartTotal.textContent = `Total: $${525}.00`;
-  
+    stock[2].textContent = 0
+
   } else if (nikePegasus < 5){
     nikePegasus+=1
     itemsQty.textContent++
@@ -203,6 +210,7 @@ addCart3.addEventListener('click', () => {
     articulo3.style.display = 'flex'
     addCart3.style.visibility = 'visible';
     navItemsQty.textContent++
+    stock[2].textContent--
   }
 })
 // ARTICLE 4
@@ -216,6 +224,7 @@ addCart4.addEventListener('click', () => {
     articulo4.style.display = 'flex'
     cartTotal.textContent = `Total: $${jordanSeries *70}.00`;
     jordanSeries+=1
+    stock[3].textContent--
 
   }else if(jordanSeries == 5){
     addCart4.style.visibility = 'hidden';
@@ -227,7 +236,8 @@ addCart4.addEventListener('click', () => {
     articulo4.style.display = 'flex'
     jordanSeries-=1
     cartTotal.textContent = `Total: $${350}.00`;
-  
+    stock[3].textContent = 0
+
   } else if (jordanSeries < 5){
     jordanSeries+=1
     itemsQty.textContent++
@@ -235,7 +245,7 @@ addCart4.addEventListener('click', () => {
     articulo4.style.display = 'flex'
     addCart4.style.visibility = 'visible';
     navItemsQty.textContent++
-    
+    stock[3].textContent--
   }
 })
 // trash 
@@ -297,31 +307,85 @@ showNikeRun.addEventListener("click", () => {
 
 // Counter items
 const minusBtn = document.querySelectorAll(".cart-amount-minus");
+
 minusBtn[0].addEventListener('click', () => {
+  if(reactInfinity < 5 && reactInfinity  >= 0){
+    navItemsQty.textContent--
+    unity[0].textContent--
+    itemsQty.textContent--
+    reactInfinity-=1
+    plusBtn[0].style.visibility= 'visible'
+    stock[0].textContent++
 
+  }else if(reactInfinity == 5 ){
+    unity[0].textContent = 5
+    stock[0].textContent = 5
+    minusBtn[0].style.visibility = 'hidden'
+
+  }
 })
-minusBtn[1].addEventListener('click', () => {
 
+minusBtn[1].addEventListener('click', () => {
+  if(leBron19 < 5 && leBron19  >= 0){
+    navItemsQty.textContent--
+    unity[1].textContent--
+    itemsQty.textContent--
+    leBron19-=1
+    plusBtn[1].style.visibility= 'visible'
+    stock[1].textContent++
+
+  }else if(leBron19 == 5 ){
+    unity[1].textContent = 5
+    stock[1].textContent = 5
+    minusBtn[1].style.visibility = 'hidden'
+
+  }
 })
 minusBtn[2].addEventListener('click', () => {
+  if(nikePegasus < 5 && nikePegasus  >= 0){
+    navItemsQty.textContent--
+    unity[2].textContent--
+    itemsQty.textContent--
+    nikePegasus-=1
+    plusBtn[2].style.visibility= 'visible'
+    stock[2].textContent++
 
+  }else if(nikePegasus == 5 ){
+    unity[2].textContent = 5
+    stock[2].textContent = 5
+    minusBtn[2].style.visibility = 'hidden'
+
+  }
 })
 minusBtn[3].addEventListener('click', () => {
+  if(jordanSeries < 5 && jordanSeries  >= 0){
+    navItemsQty.textContent--
+    unity[3].textContent--
+    itemsQty.textContent--
+    jordanSeries-=1
+    plusBtn[3].style.visibility= 'visible'
+    stock[3].textContent++
 
+  }else if(jordanSeries == 5 ){
+    unity[3].textContent = 5
+    stock[3].textContent = 5
+    minusBtn[3].style.visibility = 'hidden'
+
+  }
 })
 
-
-
 const plusBtn = document.querySelectorAll(".cart-amount-plus");
+
 plusBtn[0].addEventListener('click', () => {
   
   if(reactInfinity <5){
     navItemsQty.textContent++
     unity[0].textContent++
     itemsQty.textContent++
-    cartTotal.textContent = `Total: $${reactInfinity *140}.00`;
+    
     reactInfinity+=1
-    plusBtn[0].style.visibility= 'visible'
+   
+    stock[0].textContent--
     
   }else if(reactInfinity == 5){
     alert('There is not more stock')
@@ -330,24 +394,26 @@ plusBtn[0].addEventListener('click', () => {
     unity[0].textContent = 5
     itemsQty.textContent++
     reactInfinity-=1
-    cartTotal.textContent = `Total: $${700}.00`;
-  
+    
+    stock[0].textContent = 0
+
   } else if (reactInfinity < 5){
-    plusBtn[0].style.visibility= 'visible'
+    
     reactInfinity+=1
     itemsQty.textContent++
     navItemsQty.textContent++
-    
+    stock[0].textContent--
   }
 })
+
 plusBtn[1].addEventListener('click', () => {
   if(leBron19 <5){
     navItemsQty.textContent++
     unity[1].textContent++
     itemsQty.textContent++
-    cartTotal.textContent = `Total: $${leBron19 *160}.00`;
     leBron19+=1
-    plusBtn[0].style.visibility= 'visible'
+    plusBtn[1].style.visibility= 'visible'
+    stock[1].textContent--
     
   }else if(leBron19 == 5){
     alert('There is not more stock')
@@ -356,24 +422,25 @@ plusBtn[1].addEventListener('click', () => {
     unity[1].textContent = 5
     itemsQty.textContent++
     leBron19-=1
-    cartTotal.textContent = `Total: $${800}.00`;
-  
+    stock[1].textContent = 0
+
   } else if (leBron19 < 5){
     plusBtn[1].style.visibility= 'visible'
     leBron19+=1
     itemsQty.textContent++
     navItemsQty.textContent++
-    
+    stock[1].textContent--
   }
 })
+
 plusBtn[2].addEventListener('click', () => {
   if(nikePegasus <5){
     navItemsQty.textContent++
     unity[2].textContent++
     itemsQty.textContent++
-    cartTotal.textContent = `Total: $${nikePegasus *105}.00`;
     nikePegasus+=1
     plusBtn[2].style.visibility= 'visible'
+    stock[2].textContent--
     
   }else if(nikePegasus == 5){
     alert('There is not more stock')
@@ -382,25 +449,26 @@ plusBtn[2].addEventListener('click', () => {
     unity[2].textContent = 5
     itemsQty.textContent++
     nikePegasus-=1
-    cartTotal.textContent = `Total: $${525}.00`;
-  
+    stock[2].textContent = 0
+
   } else if (nikePegasus < 5){
     plusBtn[2].style.visibility= 'visible'
     nikePegasus+=1
     itemsQty.textContent++
     navItemsQty.textContent++
-    
+    stock[2].textContent--
   }
 })
+
 plusBtn[3].addEventListener('click', () => {
   if(jordanSeries <5){
     navItemsQty.textContent++
     unity[3].textContent++
     itemsQty.textContent++
-    cartTotal.textContent = `Total: $${jordanSeries * 70}.00`;
     jordanSeries+=1
-    plusBtn[2].style.visibility= 'visible'
-    
+    plusBtn[3].style.visibility= 'visible'
+    stock[3].textContent--
+
   }else if(jordanSeries == 5){
     alert('There is not more stock')
     plusBtn[3].style.visibility= 'hidden'
@@ -408,14 +476,14 @@ plusBtn[3].addEventListener('click', () => {
     unity[3].textContent = 5
     itemsQty.textContent++
     jordanSeries-=1
-    cartTotal.textContent = `Total: $${350}.00`;
-  
+  stock[3].textContent = 0
+
   } else if (jordanSeries < 5){
     plusBtn[3].style.visibility= 'visible'
     jordanSeries+=1
     itemsQty.textContent++
     navItemsQty.textContent++
-    
+    stock[3].textContent--
   }
 })
 
