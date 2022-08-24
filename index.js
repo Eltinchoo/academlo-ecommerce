@@ -83,7 +83,8 @@ let subtotalCounter = 0
 // ARTICLE 1
 addCart1.addEventListener('click', () => {
  
-  if(reactInfinity <5){
+  if(reactInfinity <=5){
+    articulo1.style.display = 'flex'
     cartSubtotal[0].textContent = `Subtotal: $${reactInfinity *140}.00`;
     cartTotal.textContent = `$${reactInfinity * 140}.00`;
     navItemsQty.textContent++
@@ -98,12 +99,14 @@ addCart1.addEventListener('click', () => {
     addCart1.style.display = 'none';
     reactInfinity-=1
     alert('There is not more stock')
+    cartSubtotal[0].textContent = `Subtotal: $${700}.00`;
   
   } else if (reactInfinity < 5){
     reactInfinity+=1
     itemsQty.textContent++
     addCart1.style.display = 'flex';
     navItemsQty.textContent++
+    cartSubtotal[0].textContent = `Subtotal: $${reactInfinity *140}.00`;
   }
   if(navItemsQty.textContent == 0 || itemsQty.textContent == 0){
     cartEmpty.style.display = 'flex'

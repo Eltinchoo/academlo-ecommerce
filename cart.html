@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/styles.css">
+    <link rel="stylesheet" href="./style/cartstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon-16x16.png" type="image/x-icon">
+
+    <title>NikeStore-My cart</title>
+</head>
+
+<body>
+    <nav class="container-nav">
+
+        <a href="https://www.nike.com/" target="_blank"> <img class="nike-nav" src="./img/nike white.png" alt=""></a>
+        <a class="links-nav" href="#products">Just Do It</a>
+        <a class="links-nav" href="#products">Home</a>
+        <a class="links-nav" href="#products">Products</a>
+
+        <!--Mode dark/light-->
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="32" height="32"
+            viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+        </svg>
+        <!--img shopping-cart -->
+        <a href="./cart.html" target="_blank">
+            <div class="counter-item-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32"
+                    height="32" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="6" cy="19" r="2" />
+                    <circle cx="17" cy="19" r="2" />
+                    <path d="M17 17h-11v-14h-2" />
+                    <path d="M6 5l14 1l-1 7h-13" />
+                </svg>
+
+                <div class="counter-item">0</div>
+
+            </div>
+        </a>
+    </nav>
+    <section>
+        <div class="cart-container">
+            <div class="head-cart">
+                <h1 class="cart-title">My Cart</h1>
+                <div class=" cart-close">
+                    x
+                </div>
+            </div>
+            <div class="cart-empty">
+                <img class='cart-empty-img' src="./img/istockphoto-861576608-612x612.jpg" alt="Cart Empty">
+
+                <h2>Your cart is empty</h2>
+                <p>You can add items to your cart by clicking on the "+" button on the product page</p>
+            </div>
+            <div class="final-detail">
+                <div class="cart-prices">
+                    <div class="items-container">
+                        <div class="items-qty">0 itmes</div>
+
+                        <div class="cart-checkout">
+                            <div class="cart-total">$0.00</div>
+                            <button class="checkout-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-circle-check" width="44" height="44"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M9 12l2 2l4 -4" />
+                                </svg>
+                                <div class="checkout">Checkout</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-container-content">
+
+
+            <div class="cart-card articulo1">
+                <div class="cart-img">
+                    <img class="react-infinity" src="./img/React Infinity.jfif" alt="React Infinity">
+                </div>
+                <div class="cart-info ">
+                    <h4 class="cart-subtitle">Nike React Infinity | Stock: <span class="stock">5</span> units</h4>
+                    <div>
+                        <h5 class="cart-price">$140.00</h5>
+                        <h5 class="plus-and-minus"> <span class="cart-amount-minus">-</span> 0 units <span class="cart-amount-plus">+</span>
+                        </h5>
+                    </div>
+
+                </div>
+
+                <div class="trash">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="44"
+                        height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="7" x2="20" y2="7" />
+                        <line x1="10" y1="11" x2="10" y2="17" />
+                        <line x1="14" y1="11" x2="14" y2="17" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                </div>
+
+
+            </div>
+            
+            <div class="cart-card articulo2">
+                <div class="cart-img">
+                    <img class="react-infinity" src="./img/LeBron 19 low.webp" alt="LeBron 19">
+                </div>
+                <div class="cart-info ">
+                    <h4 class="cart-subtitle"> Nike LeBron 19 | Stock: <span class="stock">5</span> units</h4>
+                    <div>
+                        <h5 class="cart-price">$160.00</h5>
+                        <h5 class="plus-and-minus"> <span class="cart-amount-minus">-</span> 0 units <span class="cart-amount-plus">+</span>
+                        </h5>
+                    </div>
+
+                </div>
+
+                <div class="trash">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="44"
+                        height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="7" x2="20" y2="7" />
+                        <line x1="10" y1="11" x2="10" y2="17" />
+                        <line x1="14" y1="11" x2="14" y2="17" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                </div>
+
+
+            </div>
+            <div class="cart-card articulo3">
+                <div class="cart-img">
+                    <img class="react-infinity" src="./img/Nike Pegasus.webp" alt="Nike Pegasus">
+                </div>
+                <div class="cart-info ">
+                    <h4 class="cart-subtitle">Nike Pegasus | Stock: <span class="stock">5</span> units</h4>
+                    <div>
+                        <h5 class="cart-price">$105.00</h5>
+                        <h5 class="plus-and-minus"> <span class="cart-amount-minus">-</span> 0 units <span class="cart-amount-plus">+</span>
+                        </h5>
+                    </div>
+
+                </div>
+
+                <div class="trash">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="44"
+                        height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="7" x2="20" y2="7" />
+                        <line x1="10" y1="11" x2="10" y2="17" />
+                        <line x1="14" y1="11" x2="14" y2="17" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                </div>
+
+
+            </div>
+            <div class="cart-card articulo4">
+                <div class="cart-img">
+                    <img class="react-infinity" src="./img/Jordan Series Mid.webp" alt="Jordan Series Mid">
+                </div>
+                <div class="cart-info ">
+                    <h4 class="cart-subtitle">Jordan Series | Stock: <span class="stock">5</span> units</h4>
+                    <div>
+                        <h5 class="cart-price">$70.00</h5>
+                        <h5 class="plus-and-minus"> <span class="cart-amount-minus">-</span> 0 units <span class="cart-amount-plus">+</span>
+                        </h5>
+                    </div>
+
+                </div>
+
+                <div class="trash">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="44"
+                        height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="7" x2="20" y2="7" />
+                        <line x1="10" y1="11" x2="10" y2="17" />
+                        <line x1="14" y1="11" x2="14" y2="17" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                </div>
+
+
+            </div>
+
+           
+
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+</body>
+<script src="index.js"></script>
+
+</html>
