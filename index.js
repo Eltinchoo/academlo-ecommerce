@@ -5,8 +5,6 @@ const buy = document.querySelector(".buy-now");
 const nikeLogoBlack = document.querySelector('.nike-logo-black')
 const nikeLogo = document.querySelector('.nike-logo')
 
-
-
 if (localStorage.getItem("theme") === "") {
   localStorage.setItem("theme", "light");
 }
@@ -57,16 +55,10 @@ let nikePegasus = 1
 let jordanSeries = 1
 //localStorage.setItem('reactInfinity', reactInfinity)
 /* 
-
 localStorage.setItem('leBron19', leBron19)
-
-
 localStorage.setItem('nikePegasus', nikePegasus)
-
-
 localStorage.setItem('jordanSeries', jordanSeries)
 */
-
 // Add to cart
 const cartContainer = document.querySelector('.cart-container-content');
 const cartEmpty = document.querySelector('.cart-empty');
@@ -77,7 +69,8 @@ const addCart4 = document.querySelector('.plus4');
 const navItemsQty = document.querySelector(".counter-item");
 const itemsQty = document.querySelector(".items-qty");
 const cartTotal = document.querySelector(".cart-total");
-
+const cartSubtotal = document.querySelectorAll(".cart-subtotal");
+const articulo1 = document.querySelector('.articulo1')
 
 
 const cartFull = document.querySelectorAll('.cart-full');
@@ -90,11 +83,13 @@ let subtotalCounter = 0
 // ARTICLE 1
 addCart1.addEventListener('click', () => {
  
-  if(reactInfinity < 5){
-    cartTotal.textContent = `$${ reactInfinity * 140}.00`;
+  if(reactInfinity <5){
+    cartSubtotal[0].textContent = `Subtotal: $${reactInfinity *140}.00`;
+    cartTotal.textContent = `$${reactInfinity * 140}.00`;
     navItemsQty.textContent++
     reactInfinity+=1
     itemsQty.textContent++
+    
     
   
   }else if(reactInfinity == 5){
@@ -110,10 +105,19 @@ addCart1.addEventListener('click', () => {
     addCart1.style.display = 'flex';
     navItemsQty.textContent++
   }
+  if(navItemsQty.textContent == 0 || itemsQty.textContent == 0){
+    cartEmpty.style.display = 'flex'
+  } else if (reactInfinity >= 1|| leBron19 >  0|| nikePegasus > 0 || jordanSeries > 0 ){
+    cartEmpty.style.display = 'none'
+  }
+  cartContainer.style.display = 'flex' 
+  cartEmpty.style.display = 'none';
+  cartFull.style.display = 'flex'
 })
 // ARTICLE 2
 addCart2.addEventListener('click', () => {
   if(leBron19 < 5){
+    cartSubtotal[1].textContent = `Subtotal: $${leBron19 *160}.00`;
     cartTotal.textContent = `$${ leBron19 * 160}.00`;
     navItemsQty.textContent++
     leBron19+=1
@@ -132,10 +136,16 @@ addCart2.addEventListener('click', () => {
     addCart2.style.display = 'flex';
     navItemsQty.textContent++
   }
+  if(navItemsQty.textContent == 0 || itemsQty.textContent == 0){
+    cartEmpty.style.display = 'flex'
+  } else if (reactInfinity >= 1|| leBron19 >  0|| nikePegasus > 0 || jordanSeries > 0 ){
+    cartEmpty.style.display = 'none'
+  }
 })
 // ARTICLE 3
 addCart3.addEventListener('click', () => {
   if(nikePegasus < 5){
+    cartSubtotal[2].textContent = `Subtotal: $${nikePegasus *105}.00`;
     itemsQty.textContent++
     navItemsQty.textContent++
     nikePegasus+=1
@@ -153,10 +163,16 @@ addCart3.addEventListener('click', () => {
     addCart3.style.display = 'flex';
     navItemsQty.textContent++
   }
+  if(navItemsQty.textContent == 0 || itemsQty.textContent == 0){
+    cartEmpty.style.display = 'flex'
+  } else if (reactInfinity >= 1|| leBron19 >  0|| nikePegasus > 0 || jordanSeries > 0 ){
+    cartEmpty.style.display = 'none'
+  }
 })
 // ARTICLE 4
 addCart4.addEventListener('click', () => {
   if(jordanSeries < 5){
+    cartSubtotal[3].textContent = `Subtotal: $${jordanSeries *70}.00`;
     itemsQty.textContent++
     navItemsQty.textContent++
     jordanSeries+=1
@@ -174,6 +190,11 @@ addCart4.addEventListener('click', () => {
     addCart4.style.display = 'flex';
     navItemsQty.textContent++
   }
+  if(navItemsQty.textContent == 0 || itemsQty.textContent == 0){
+    cartEmpty.style.display = 'flex'
+  } else if (reactInfinity >= 1|| leBron19 >  0|| nikePegasus > 0 || jordanSeries > 0 ){
+    cartEmpty.style.display = 'none'
+  }
 })
 //Cart
 const cart = document.querySelector(".counter-item-cart");
@@ -181,7 +202,9 @@ const cartArea = document.querySelector(".cart-container");
 const closeCart = document.querySelector(".cart-close");
 
 cart.addEventListener("click", () => {
+
   cartArea.style.display = "flex";
+
 });
 
 closeCart.addEventListener("click", () => {
@@ -316,7 +339,7 @@ addCart5.addEventListener('click', () => {
 */
 // trash 
 const trash = document.querySelectorAll('.trash')
-const articulo1 = document.querySelector('.articulo1')
+
 const articulo2 = document.querySelector('.articulo2')
 const articulo3 = document.querySelector('.articulo3')
 const articulo4 = document.querySelector('.articulo4')
@@ -379,7 +402,7 @@ showNikeRun.addEventListener("click", () => {
 const minusBtn = document.querySelectorAll(".minus");
 const plusBtn = document.querySelectorAll(".plus");
 
-const cartSubtotal = document.querySelectorAll(".cart-subtotal");
+
 
 const cartCheckout = document.querySelector(".cart-checkout");
 
