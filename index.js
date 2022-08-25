@@ -109,7 +109,6 @@ let counterJordanSeries = 0;
 //Total
 const total = document.querySelector('.cart-total');
 total.textContent = `$${counterReactInfinity*140 + counterLeBron19*160 + counterNikePegasus * 105 + counterJordanSeries *70}.00 `
-
 // ARTICLE 1
 addCart1.addEventListener('click', () => {
  
@@ -175,7 +174,6 @@ addCart2.addEventListener('click', () => {
     plusBtn[1].style.visibility = 'hidden'
     counterLeBron19 = 5
     addCart2.style.visibility = 'hidden';
-    
     alert('There is not more stock')
     navItemsQty.textContent++
     unity[1].textContent = 5
@@ -286,17 +284,48 @@ const trash = document.querySelectorAll('.trash')
 
 trash[0].addEventListener('click', () => {
   articulo1.style.display = 'none'
+  stock[0].textContent = 5
+  addCart1.style.visibility = 'visible'
+  unity[0].textContent = 0
+  counterReactInfinity = 0
+  itemsQty.textContent= counterReactInfinity + counterLeBron19 + counterNikePegasus + counterJordanSeries
+  total.textContent = `$${counterReactInfinity*140 + counterLeBron19*160 + counterNikePegasus * 105 + counterJordanSeries *70}.00 `
+  navItemsQty.textContent = counterReactInfinity + counterLeBron19 + counterNikePegasus + counterJordanSeries
  
 })
 trash[1].addEventListener('click', () => {
   articulo2.style.display = 'none'
+  stock[1].textContent = 5
+  addCart2.style.visibility = 'visible'
+  unity[1].textContent = 0
+  counterLeBron19 = 0
+  itemsQty.textContent= counterReactInfinity + counterLeBron19 + counterNikePegasus + counterJordanSeries
+  total.textContent = `$${counterReactInfinity*140 + counterLeBron19*160 + counterNikePegasus * 105 + counterJordanSeries *70}.00 `
+  navItemsQty.textContent = counterReactInfinity + counterLeBron19 + counterNikePegasus + counterJordanSeries
+
 })
 trash[2].addEventListener('click', () => {
   articulo3.style.display = 'none'
+  stock[2].textContent = 5
+  addCart3.style.visibility = 'visible'
+  unity[2].textContent = 0
+  counterNikePegasus = 0
+  itemsQty.textContent = counterReactInfinity + counterLeBron19 + counterNikePegasus + counterJordanSeries
+  total.textContent = `$${counterReactInfinity*140 + counterLeBron19*160 + counterNikePegasus * 105 + counterJordanSeries *70}.00 `
+  navItemsQty.textContent = counterReactInfinity + counterLeBron19 + counterNikePegasus + counterJordanSeries
 })
 trash[3].addEventListener('click', () => {
   articulo4.style.display = 'none'
+  stock[3].textContent = 5
+  addCart4.style.visibility = 'visible'
+  unity[3].textContent = 0
+  counterJordanSeries = 0
+  itemsQty.textContent = counterReactInfinity + counterLeBron19 + counterNikePegasus + counterJordanSeries
+  total.textContent = `$${counterReactInfinity*140 + counterLeBron19*160 + counterNikePegasus * 105 + counterJordanSeries *70}.00 `
+  navItemsQty.textContent = counterReactInfinity + counterLeBron19 + counterNikePegasus + counterJordanSeries
 })
+
+
 
 // Counter items
 const minusBtn = document.querySelectorAll(".cart-amount-minus");

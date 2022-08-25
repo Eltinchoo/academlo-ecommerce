@@ -20,11 +20,15 @@ nav {
   background-color: rgb(117, 50, 249);
 
   padding: 1rem;
+  width: 100%;
+  
 }
 .container-nav {
+  position: fixed;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: -10rem;
 }
 .nike-nav {
 
@@ -68,6 +72,7 @@ nav {
 }
 /*! ======================== HEADER ================= */
 .container-presentation {
+  margin-top: 10rem;
   color: black;
   display: flex;
   justify-content: center;
