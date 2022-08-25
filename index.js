@@ -331,7 +331,7 @@ trash[3].addEventListener('click', () => {
 const minusBtn = document.querySelectorAll(".cart-amount-minus");
 
 minusBtn[0].addEventListener('click', () => {
-  if(reactInfinity < 5 && reactInfinity  >= 0){
+  if(reactInfinity < 5 && reactInfinity  > 0){
     counterReactInfinity--
     navItemsQty.textContent--
     unity[0].textContent--
